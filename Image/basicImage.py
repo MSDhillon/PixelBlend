@@ -69,6 +69,7 @@ class BasicImageHide:
                     raise Exception("Invalid image format")
             self.carrier_image = self.image.copy()  # Work on a copy
         else:
+            messagebox.showinfo('Error', 'Invalid image format. Provide a valid image file!')
             raise ValueError("Invalid image format. Provide image filepath or PIL Image object.")
 
     def prepare_message(self):
@@ -170,6 +171,8 @@ class BasicImageReveal:
                     if ''.join(self.bitab[:-1]).isdigit():
                         self.limit = int(''.join(self.bitab[:-1]))
                     else:
+                        messagebox.showinfo('Error',
+                                            'Cannot decode text from image, check decoding level and if carrier is encoded!')
                         raise IndexError('Cannot decode')
 
         # Check if the entire message has been decoded

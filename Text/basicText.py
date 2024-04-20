@@ -26,7 +26,6 @@ class BasicTextHide:
     def encode_text(self, message_path, carrier_text_path):
         # Encode text message into bits
         encoded_data = self._encode_message(message_path)
-
         save_path = filedialog.asksaveasfilename(defaultextension='.txt')
 
         # Embed the encoded data into the carrier text and save the result
@@ -34,7 +33,7 @@ class BasicTextHide:
              open(save_path, 'w+', encoding='utf-8') as encoded_file:
             self._embed_data_in_carrier(encoded_data, carrier_file, encoded_file)
 
-        messagebox.showinfo('Success', 'Text has been encoded successfully!')
+        messagebox.showinfo('Success', 'Text file has been encoded successfully!')
 
     @staticmethod
     def _encode_message(message):
