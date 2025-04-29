@@ -1,40 +1,4 @@
-Nottingham Trent University
-
-School of Science and Technology
-
-Concealing Data in Pixels Using Steganography
-
-by
-
-Manjot Singh Dhillon
-
-in
-
-2024
-
-Project report in part fulfilment
-
-of the requirements for the degree of
-
-Bachelor of Science with Honours
-
-In
-
-Computer Systems (Cyber Security)
-
-I hereby declare that I am the sole author of this report. I authorise
-Nottingham Trent University to lend this report to other institutions or
-individuals for the purpose of scholarly research.
-
-I also authorise Nottingham Trent University to reproduce this report by
-photocopying or by other means, in total or part, at the request of
-other institutions or individuals for the purpose of scholarly research.
-
-Signature
-
-Manjot Singh Dhillon
-
-# Abstract {#abstract .Page-Headings}
+# Abstract
 
 The following project aims to address the issue of data security
 breaches within companies by proposing a steganography tool as a
@@ -64,7 +28,7 @@ breaches. In addition, the algorithms underwent assessment using
 performance evaluation metrics such as Peak Signal-to-Noise Ratio (PSNR)
 and Structural Similarity Index Measure (SSIM).
 
-# Acknowledgements {#acknowledgements .Page-Headings}
+# Acknowledgements
 
 I would like to express my deepest gratitude to Ms. Ismahane Cheheb, my
 project supervisor, for their exceptional guidance, support, and
@@ -75,350 +39,9 @@ I would like to thank my family and friends for their support,
 encouragement, and understanding throughout this journey. Their belief
 in me has been a constant source of motivation.
 
-# Table of Contents {#table-of-contents .Page-Headings}
+# Introduction
 
-[Abstract [ii](#abstract)](#abstract)
-
-[Acknowledgements [iii](#acknowledgements)](#acknowledgements)
-
-[Table of Contents [iv](#table-of-contents)](#table-of-contents)
-
-[List of Figures [ix](#list-of-figures)](#list-of-figures)
-
-[List of Tables [xi](#list-of-tables)](#list-of-tables)
-
-[List of Diagrams [xii](#list-of-diagrams)](#list-of-diagrams)
-
-[CHAPTER 1 [1](#section-1)](#section-1)
-
-[Introduction [1](#_Toc125788016)](#_Toc125788016)
-
-[1.1 Introduction [1](#introduction)](#introduction)
-
-[1.2 Steganography [2](#steganography)](#steganography)
-
-[1.3 Project [3](#project)](#project)
-
-[CHAPTER 2 [4](#section-2)](#section-2)
-
-[CONTEXT [4](#_Toc164351897)](#_Toc164351897)
-
-[2.1 Introduction [4](#introduction-1)](#introduction-1)
-
-[2.2 Applications of Steganography
-[5](#applications-of-steganography)](#applications-of-steganography)
-
-[2.3 Types of Steganography
-[6](#types-of-steganography)](#types-of-steganography)
-
-[2.3.1 Image Steganography
-[6](#image-steganography)](#image-steganography)
-
-[2.3.2 Video Steganography
-[11](#video-steganography)](#video-steganography)
-
-[2.3.3 Audio Steganography
-[16](#audio-steganography)](#audio-steganography)
-
-[2.3.4 Text Steganography
-[21](#text-steganography)](#text-steganography)
-
-[2.3.5 Network Steganography
-[26](#network-steganography)](#network-steganography)
-
-[2.4 Comparison with Cryptography
-[27](#comparison-with-cryptography)](#comparison-with-cryptography)
-
-[2.5 Comparison with Watermarking
-[27](#comparison-with-watermarking)](#comparison-with-watermarking)
-
-[2.6 Review Existing Solutions
-[28](#review-existing-solutions)](#review-existing-solutions)
-
-[CHAPTER 3 [33](#section-3)](#section-3)
-
-[New Ideas [33](#_Toc164351910)](#_Toc164351910)
-
-[3.1 Introduction [33](#introduction-2)](#introduction-2)
-
-[3.2 Proposed Method Overview
-[33](#proposed-method-overview)](#proposed-method-overview)
-
-[3.2.1 Objectives [34](#objectives)](#objectives)
-
-[3.2.2 Scope [35](#scope)](#scope)
-
-[3.2.3 Potential Target Audience
-[36](#potential-target-audience)](#potential-target-audience)
-
-[3.3 User Interface and Experience Design
-[37](#user-interface-and-experience-design)](#user-interface-and-experience-design)
-
-[3.3.1 Flowchart [38](#flowchart)](#flowchart)
-
-[3.3.2 Early Design [42](#early-design)](#early-design)
-
-[3.3.3 Use Case Diagram [44](#use-case-diagram)](#use-case-diagram)
-
-[3.4 Gantt Chart [45](#gantt-chart)](#gantt-chart)
-
-[3.5 Steganography Algorithms Implementation
-[46](#steganography-algorithms-implementation)](#steganography-algorithms-implementation)
-
-[3.5.1 Image Steganography
-[46](#image-steganography-1)](#image-steganography-1)
-
-[3.5.2 Text Steganography
-[58](#text-steganography-1)](#text-steganography-1)
-
-[3.6 Evaluation Criteria
-[63](#evaluation-criteria)](#evaluation-criteria)
-
-[CHAPTER 4 [65](#section-4)](#section-4)
-
-[IMPLEMENTATION or INVESTIGATION [65](#_Toc164351926)](#_Toc164351926)
-
-[4.1 Introduction [65](#introduction-3)](#introduction-3)
-
-[4.2 Implementation Approach
-[65](#implementation-approach)](#implementation-approach)
-
-[4.3 Methodology [66](#methodology)](#methodology)
-
-[4.4 Development Environment
-[66](#development-environment)](#development-environment)
-
-[4.5 Programming Language and Technologies
-[67](#programming-language-and-technologies)](#programming-language-and-technologies)
-
-[4.6 UI Implementation [69](#ui-implementation)](#ui-implementation)
-
-[4.6.1 Dashboard [69](#dashboard)](#dashboard)
-
-[4.6.2 Video and Audio Steganography
-[70](#video-and-audio-steganography)](#video-and-audio-steganography)
-
-[4.6.3 Image Steganography
-[70](#image-steganography-2)](#image-steganography-2)
-
-[4.6.4 Text Steganography
-[76](#text-steganography-2)](#text-steganography-2)
-
-[4.7 Testing [80](#testing)](#testing)
-
-[4.7.1 Unit Testing [80](#unit-testing)](#unit-testing)
-
-[4.7.2 Integration Testing
-[82](#integration-testing)](#integration-testing)
-
-[4.7.3 Functional Testing
-[84](#functional-testing)](#functional-testing)
-
-[4.7.4 User Testing [85](#user-testing)](#user-testing)
-
-[CHAPTER 5 [87](#section-5)](#section-5)
-
-[RESULTS / DISCUSSION [87](#_Toc164351943)](#_Toc164351943)
-
-[5.1 Introduction [87](#introduction-4)](#introduction-4)
-
-[5.2 Performance Evaluation
-[88](#performance-evaluation)](#performance-evaluation)
-
-[5.2.1 Computational Performance
-[88](#computational-performance)](#computational-performance)
-
-[5.2.2 Capacity [89](#capacity)](#capacity)
-
-[5.2.3 Robustness and Security
-[89](#robustness-and-security)](#robustness-and-security)
-
-[5.2.4 Peak Signal-to-Noise Ratio (PSNR)
-[90](#peak-signal-to-noise-ratio-psnr)](#peak-signal-to-noise-ratio-psnr)
-
-[5.2.5 Structured Similarity Index Measurement (SSIM)
-[91](#structured-similarity-index-measurement-ssim)](#structured-similarity-index-measurement-ssim)
-
-[5.2.6 Online Decoders [94](#online-decoders)](#online-decoders)
-
-[5.2.7 HEX Editor [96](#hex-editor)](#hex-editor)
-
-[5.2.8 Metadata and Byte-by-Byte Comparison
-[99](#metadata-and-byte-by-byte-comparison)](#metadata-and-byte-by-byte-comparison)
-
-[5.3 Comparative Analysis
-[100](#comparative-analysis)](#comparative-analysis)
-
-[5.3.1 Image Observations
-[104](#image-observations)](#image-observations)
-
-[5.3.2 Image Analysis [104](#image-analysis)](#image-analysis)
-
-[5.3.3 Text File Observations
-[104](#text-file-observations)](#text-file-observations)
-
-[5.3.4 Text File Analysis
-[105](#text-file-analysis)](#text-file-analysis)
-
-[CHAPTER 6 [106](#section-6)](#section-6)
-
-[CONCLUSIONS / FUTURE WORK [106](#_Toc164351960)](#_Toc164351960)
-
-[6.1 Conclusions [106](#conclusions)](#conclusions)
-
-[6.2 Future Work [107](#future-work)](#future-work)
-
-[6.3 Potential Impact [108](#potential-impact)](#potential-impact)
-
-[6.4 Legal, Social, Ethical and Professional Issues
-[109](#legal-social-ethical-and-professional-issues)](#legal-social-ethical-and-professional-issues)
-
-[6.4.1 Legal Issues [109](#legal-issues)](#legal-issues)
-
-[6.4.2 Social Issues [110](#social-issues)](#social-issues)
-
-[6.4.3 Ethical Issues [111](#ethical-issues)](#ethical-issues)
-
-[6.4.4 Professional Issues
-[112](#professional-issues)](#professional-issues)
-
-[6.5 Synoptic Reflections
-[113](#synoptic-reflections)](#synoptic-reflections)
-
-[References [115](#references)](#references)
-
-[Bibliography [126](#bibliography)](#bibliography)
-
-# List of Figures {#list-of-figures .Page-Headings}
-
-[Figure 1: General Working Overview of GAN (Subramanian et al., 2021)
-[10](#_Toc164351765)](#_Toc164351765)
-
-[Figure 2: Hierarchical classification of video steganography (Kunhoth
-et al., 2023) [11](#_Toc164351766)](#_Toc164351766)
-
-[Figure 3: General workflow of data hiding in the transform domain
-(Kunhoth et al., 2023) [13](#_Toc164351767)](#_Toc164351767)
-
-[Figure 4: Motion vector representation (Pan et al., 2010)
-[15](#_Toc164351768)](#_Toc164351768)
-
-[Figure 5: The least significant bit (LSB) within an 8-bit per sample
-signal gets replaced by a single bit of concealed data (Djebbar et al.,
-2012) [17](#_Toc164351769)](#_Toc164351769)
-
-[Figure 6: Word Shifting (Krishan, Thandra and Baba, 2017)
-[23](#_Toc164351770)](#_Toc164351770)
-
-[Figure 7: Line Shifting (Krishan, Thandra and Baba, 2017)
-[24](#_Toc164351771)](#_Toc164351771)
-
-[Figure 8 - Dashboard Prototype [42](#_Toc164351772)](#_Toc164351772)
-
-[Figure 9 - Encoding/Decoding Prototype
-[43](#_Toc164351773)](#_Toc164351773)
-
-[Figure 10 - Gantt Chart [45](#_Toc164351774)](#_Toc164351774)
-
-[Figure 11 - LSB Encoding Visualisation (Balagyozyan and Hakobyan, 2021)
-[47](#_Toc164351775)](#_Toc164351775)
-
-[Figure 12 - DWT Encoding Visualisation
-[53](#_Toc164351776)](#_Toc164351776)
-
-[Figure 13 - Dashboard [69](#_Toc164351777)](#_Toc164351777)
-
-[Figure 14 - Audio & Video Steganography
-[70](#_Toc164351778)](#_Toc164351778)
-
-[Figure 15 - Image Steganography [71](#_Toc164351779)](#_Toc164351779)
-
-[Figure 16 - Image Selection [72](#_Toc164351780)](#_Toc164351780)
-
-[Figure 17 - Error Messages [73](#_Toc164351781)](#_Toc164351781)
-
-[Figure 18 - Image Steganography Extraction Window
-[74](#_Toc164351782)](#_Toc164351782)
-
-[Figure 19 - Error Message [75](#_Toc164351783)](#_Toc164351783)
-
-[Figure 20 - Error Messages [76](#_Toc164351784)](#_Toc164351784)
-
-[Figure 21 - Text Encoding Window [77](#_Toc164351785)](#_Toc164351785)
-
-[Figure 22 - Error Message [78](#_Toc164351786)](#_Toc164351786)
-
-[Figure 23 - Text Extraction Window
-[79](#_Toc164351787)](#_Toc164351787)
-
-[Figure 24 - SSIM for LSB [92](#_Toc164351788)](#_Toc164351788)
-
-[Figure 25 - SSIM for DWT [93](#_Toc164351789)](#_Toc164351789)
-
-[Figure 26 - Aperi\'Solve for Image Encoded with LSB
-[94](#_Toc164351790)](#_Toc164351790)
-
-[Figure 27 - Aperi\'Solve for Image Encoded with DWT
-[95](#_Toc164351791)](#_Toc164351791)
-
-[Figure 28 - Stylesuxx Decoding LSB and DWT Stego Images
-[95](#_Toc164351792)](#_Toc164351792)
-
-[Figure 29 - Stego Image Encoded Using the LSB Algorithm
-[97](#_Toc164351793)](#_Toc164351793)
-
-[Figure 30 - Stego Image Encoded Using the DWT Algorithm
-[98](#_Toc164351794)](#_Toc164351794)
-
-[Figure 31 - Comparison of HEX Values of Carrier and Stego File
-[99](#_Toc164351795)](#_Toc164351795)
-
-[Figure 32 - Metadata and Byte-by-Byte Scan
-[100](#_Toc164351796)](#_Toc164351796)
-
-# List of Tables {#list-of-tables .Page-Headings}
-
-[Table 1 - Existing Steganography Software
-[28](#_Toc164351754)](#_Toc164351754)
-
-[Table 2 - Unit Testing [80](#_Toc164351755)](#_Toc164351755)
-
-[Table 3 - Integration Testing [82](#_Toc164351756)](#_Toc164351756)
-
-[Table 4 - Functional Testing [84](#_Toc164351757)](#_Toc164351757)
-
-[Table 5 - User Testing [85](#_Toc164351758)](#_Toc164351758)
-
-[Table 6 - Legal Issues [109](#_Toc164351759)](#_Toc164351759)
-
-[Table 7 - Social Issues [110](#_Toc164351760)](#_Toc164351760)
-
-[Table 8 - Ethical Issues [111](#_Toc164351761)](#_Toc164351761)
-
-[Table 9 - Professional Issues [112](#_Toc164351762)](#_Toc164351762)
-
-# List of Diagrams {#list-of-diagrams .Page-Headings}
-
-[Diagram 1 - General Flowchart [38](#_Toc164351746)](#_Toc164351746)
-
-[Diagram 2 -- Image Least Significant Bit Encoding Flowchart
-[39](#_Toc164351747)](#_Toc164351747)
-
-[Diagram 3 -- Image Discrete Wavelet Transform Encoding Flowchart
-[40](#_Toc164351748)](#_Toc164351748)
-
-[Diagram 4 - Text Least Significant Bit Encoding Flowchart
-[41](#_Toc164351749)](#_Toc164351749)
-
-[Diagram 5 - Use Case Diagram [44](#_Toc164351750)](#_Toc164351750)
-
-#  {#section .Page-Headings}
-
-#  {#section-1 .Chapter-Number}
-
-[]{#_Toc125788016 .anchor}Introduction
-
-## Introduction {#introduction .Section-Heading-1}
+## Introduction
 
 In today\'s age, there has been a digitalisation of assets, therefore,
 everything is digitally stored and processed. All kinds of data are
@@ -444,7 +67,7 @@ techniques exist to break through encryption and hashing, which can be
 used to access leaked data. Steganographic algorithms can provide an
 additional layer of security to make data more difficult to access.
 
-## Steganography {#steganography .Section-Heading-1}
+## Steganography
 
 Steganography is a technique that focuses on the concealment of
 information within other innocuous-looking data. Nowadays, the data used
@@ -475,7 +98,7 @@ technique, which involved inputting pixel-sized pictures within a
 regular post (Burnley, 2018). Morse code was also used during the
 Vietnam War to send a message back to the US from a captive.
 
-## Project {#project .Section-Heading-1}
+## Project
 
 Steganography has been digitised to conceal electronic data within
 multimedia files. This technology can be proven effective in helping
@@ -492,11 +115,9 @@ the software and benefit from its advantages.
 Throughout the project, careful consideration has been given to legal,
 social, ethical, and professional issues.
 
-#  {#section-2 .Chapter-Number}
+# CONTEXT
 
-[]{#_Toc164351897 .anchor}CONTEXT
-
-## Introduction {#introduction-1 .Section-Heading-1}
+## Introduction
 
 Steganography is an ancient art of concealing data within seemingly
 innocuous-looking carriers. Today, this has evolved in the digital age,
@@ -552,7 +173,7 @@ despite its legitimate uses, steganography can also be exploited by
 malicious attackers to conceal malware within seemingly innocuous
 carriers and carry out various malicious activities (Chowdary, 2023).
 
-## Types of Steganography {#types-of-steganography .Section-Heading-1}
+## Types of Steganography
 
 Steganography, the field dedicated to concealing information, uses
 various methods to conceal information within carriers, like images,
@@ -647,9 +268,10 @@ steganography, a third network called a steganalyser is sometimes
 incorporated. This new network checks for the presence of hidden data in
 the images. These three networks compete to create images as close as
 possible to the original (Subramanian et al., 2021).
-
-[]{#_Toc164351765 .anchor}Figure 1: General Working Overview of GAN
-(Subramanian et al., 2021)
+<p align="center">
+<img width="327" alt="image" src="https://github.com/user-attachments/assets/97dbb195-e09e-4886-9494-5972fb9382e2" />
+</p>
+Figure 1: General Working Overview of GAN (Subramanian et al., 2021)
 
 ### Video Steganography
 
@@ -669,9 +291,10 @@ before the confidential data is added, saving storage space. Within the
 compressed domain, some commonly used techniques are Motion Vectors,
 intra-prediction modes, entropy coding modules, and DCT/DST (Fan, Zhang
 and Zhao, 2022).
-
-[]{#_Toc164351766 .anchor}Figure 2: Hierarchical classification of video
-steganography (Kunhoth et al., 2023)
+<p align="center">
+<img width="304" alt="image" src="https://github.com/user-attachments/assets/c629db24-e1a0-4119-828c-bce6a044f523" />
+</p>
+Figure 2: Hierarchical classification of video steganography (Kunhoth et al., 2023)
 
 #### Raw Domain
 
@@ -713,9 +336,10 @@ The transform domain involves converting cover frame blocks into the
 transform domain and embedding secret data in the least significant bits
 of transform coefficients. The commonly used functions in this domain
 are DWT and DCT (Korgaonkar and Gaonkar, 2017).
-
-[]{#_Toc164351767 .anchor}Figure 3: General workflow of data hiding in
-the transform domain (Kunhoth et al., 2023)
+<p align="center">
+<img width="302" alt="image" src="https://github.com/user-attachments/assets/726472a1-c753-43f9-a5db-f298a85fab74" />
+</p>
+Figure 3: General workflow of data hiding in the transform domain (Kunhoth et al., 2023)
 
 Kunhoth et al. (2023) explain that signals can be represented in the
 time or frequency domain, with each domain capturing essential
@@ -750,9 +374,10 @@ files; this approach offers advantages such as reduced memory
 consumption and increased data transfer speed across networks. This
 process can be achieved by using various techniques, including MPEG, AVC
 (H.264) and HEVC (H.266) video codecs (Patel, Lad and Patel, 2021).
-
-[]{#_Toc164351768 .anchor}Figure 4: Motion vector representation (Pan et
-al., 2010)
+<p align="center">
+<img width="252" alt="image" src="https://github.com/user-attachments/assets/e965ee3e-a3da-4782-bbbd-0740e85f639f" />
+</p>
+Figure 4: Motion vector representation (Pan et al., 2010)
 
 In a study conducted by Pan et al. (2010), a steganography approach was
 introduced within the H.264 video standard, utilising motion vectors and
@@ -808,10 +433,10 @@ embedded in the audio without noticeably affecting the quality,
 therefore, maintaining the audio\'s natural sound while covertly
 embedding data, thereby upholding a balance between data capacity and
 sound quality.
-
-[]{#_Toc164351769 .anchor}Figure 5: The least significant bit (LSB)
-within an 8-bit per sample signal gets replaced by a single bit of
-concealed data (Djebbar et al., 2012)
+<p align="center">
+<img width="297" alt="image" src="https://github.com/user-attachments/assets/9c1fb817-1ae1-4eae-9341-a04eaacde572" />
+</p>
+Figure 5: The least significant bit (LSB) within an 8-bit per sample signal gets replaced by a single bit of concealed data (Djebbar et al., 2012)
 
 A practical example of how this domain operates can be seen in the
 utilisation of the Least Significant Bit (LSB) algorithm. This technique
@@ -961,9 +586,10 @@ minimises any visual anomalies that might arise from the word-shifting
 process, reducing the likelihood of detection. The document may appear
 ordinary at first glance, but it contains a hidden layer of information
 that can only be accessed by those aware of the encoding technique.
-
-[]{#_Toc164351770 .anchor}Figure 6: Word Shifting (Krishan, Thandra and
-Baba, 2017)
+<p align="center">
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/81ac6695-97b4-4ce0-8125-86a070379faf" />
+</p>
+Figure 6: Word Shifting (Krishan, Thandra and Baba, 2017)
 
 ##### Line Shift Encoding
 
@@ -982,13 +608,10 @@ emphasising the necessity of sophisticated differential coding methods.
 These methods enhance the system\'s robustness and ability to remain
 effective under various conditions and optimise its performance,
 ensuring the process is accurate and efficient.
-
-Before
-
-After
-
-[]{#_Toc164351771 .anchor}Figure 7: Line Shifting (Krishan, Thandra and
-Baba, 2017)
+<p align="center">
+<img width="147" alt="image" src="https://github.com/user-attachments/assets/17282a5f-6a65-4592-adf6-67145dddee6a" />
+</p>
+Figure 7: Line Shifting (Krishan, Thandra and Baba, 2017)
 
 One of this technique\'s most remarkable aspects is its data storage
 capacity. Kumar and Singh\'s study emphasises that on a standard page
@@ -1237,7 +860,7 @@ in the following table, along with their strengths and weaknesses.
 |              |                    |                     | 2023)     |
 +--------------+--------------------+---------------------+-----------+
 
-: []{#_Toc164351754 .anchor}Table 1 - Existing Steganography Software
+Table 1 - Existing Steganography Software
 
 After analysing existing solutions, it became clear that each software
 has advantages and disadvantages. One notable observation is that most
@@ -1254,9 +877,7 @@ expertise, indulging in a steep learning curve. Moreover, most
 applications reported in the table have not been updated in at least
 three years, making them outdated for today's threats and requirements.
 
-#  {#section-3 .Chapter-Number}
-
-[]{#_Toc164351910 .anchor}New Ideas
+# New Ideas
 
 ## Introduction
 
@@ -1415,8 +1036,10 @@ navigation.
 The flowchart below provides an essential representation of how the
 software operates on a user level without going into details of the
 encoding handling.
-
-[]{#_Toc164351746 .anchor}Diagram 1 - General Flowchart
+<p align="center">
+<img width="254" alt="image" src="https://github.com/user-attachments/assets/bd97757f-e549-42c6-be5a-91b907a78388" />
+</p>
+Diagram 1 - General Flowchart
 
 Diagram 1 illustrates the inputs and outputs of the software. Users are
 prompted to upload the carrier file and the secret message to be
@@ -1427,9 +1050,10 @@ determining the algorithm employed.
 
 The following flowchart outlines the encoding of a secret message within
 an image carrier using the Least Significant Bit (LSB) algorithm.
-
-[]{#_Toc164351747 .anchor}Diagram 2 -- Image Least Significant Bit
-Encoding Flowchart
+<p align="center">
+<img width="346" alt="image" src="https://github.com/user-attachments/assets/7f27b13e-3bc1-4335-a855-1d03b2d3c089" />
+</p>
+Diagram 2 -- Image Least Significant Bit Encoding Flowchart
 
 The carrier image and secret message are first uploaded, and a check is
 performed to ensure they have been received. Then, the image is opened,
@@ -1444,9 +1068,10 @@ as output to the user.
 The following flowchart outlines the process of encoding a secret
 message within an image carrier using the Discrete Wavelet Transform
 (DWT) algorithm.
-
-[]{#_Toc164351748 .anchor}Diagram 3 -- Image Discrete Wavelet Transform
-Encoding Flowchart
+<p align="center">
+  <img width="338" alt="image" src="https://github.com/user-attachments/assets/870dd2d5-7d96-42dc-9e1d-481dbfe98c35" />
+</p>
+Diagram 3 -- Image Discrete Wavelet Transform Encoding Flowchart
 
 Firstly, the carrier image and secret message are uploaded by the user.
 Once received, the image is loaded in BGR format while concurrently
@@ -1465,9 +1090,10 @@ output to the user.
 
 The following flowchart outlines the encoding of a secret message within
 a text file using the LSB algorithm.
-
-[]{#_Toc164351749 .anchor}Diagram 4 - Text Least Significant Bit
-Encoding Flowchart
+<p align="center">
+<img width="370" alt="image" src="https://github.com/user-attachments/assets/ce8a1f54-3084-408b-88f6-e76837fe3ad5" />
+</p>
+Diagram 4 - Text Least Significant Bit Encoding Flowchart
 
 Initially, the software acquires both the carrier document and the
 secret message from the user. Based on its text volume, the message
@@ -1488,8 +1114,10 @@ Figure 8 displays the application's title at the top, along with two
 buttons. One button reveals the options for concealing text within
 multimedia files, while the other displays the options for extracting
 the encoded text from multimedia.
-
-[]{#_Toc164351772 .anchor}Figure 8 - Dashboard Prototype
+<p align="center">
+<img width="358" alt="image" src="https://github.com/user-attachments/assets/cd92855a-fa1e-45fb-acf5-2c7611697119" />
+</p>
+Figure 8 - Dashboard Prototype
 
 Once the user selects their preferred option, they can choose the type
 of multimedia file to encode or reveal data, initially choosing from
@@ -1500,8 +1128,10 @@ instructions on encoding or revealing the data.
 
 The image below displays an early encoding and decoding GUI prototype to
 hide and reveal data.
-
-[]{#_Toc164351773 .anchor}Figure 9 - Encoding/Decoding Prototype
+<p align="center">
+<img width="371" alt="image" src="https://github.com/user-attachments/assets/de7a2935-a667-4147-9055-b90dbc9f6cf0" />
+</p>
+Figure 9 - Encoding/Decoding Prototype
 
 Figure 9 displays the encoding and decoding window, featuring two
 primary sections. The first section displays a preview of the multimedia
@@ -1519,8 +1149,10 @@ The following diagram displays the use case diagram of the steganography
 software, displaying the functionalities of the proposed method. The
 diagram shows the two main activities of the software: encoding and
 decoding.
-
-[]{#_Toc164351750 .anchor}Diagram 5 - Use Case Diagram
+<p align="center">
+<img width="394" alt="image" src="https://github.com/user-attachments/assets/471f3a1f-4563-4b06-806c-43a2cfa560ef" />
+</p>
+Diagram 5 - Use Case Diagram
 
 Users can choose the type of file they want to encode, with options
 initially limited to images and text files. Next, depending on their
@@ -1544,8 +1176,10 @@ planning stage. It has served as a guide and will be used in the future
 to meet all the listed deadlines and ensure successful completion within
 the specified timeframe. The project is scheduled to conclude on April
 19, 2024, and currently, the process is on track to achieve this goal.
-
-[]{#_Toc164351774 .anchor}Figure 10 - Gantt Chart
+<p align="center">
+<img width="351" alt="image" src="https://github.com/user-attachments/assets/ba40a0e1-b811-40a3-8973-4850c8392a71" />
+</p>
+Figure 10 - Gantt Chart
 
 ## Steganography Algorithms Implementation
 
@@ -1578,9 +1212,10 @@ implemented algorithm. For every value of the RGB colour channels, the
 least significant bit of each channel is adjusted to accommodate a bit
 of the secret message. The LSB is altered to either 0 or 1, depending on
 the bit of the secret message being encoded.
-
-[]{#_Toc164351775 .anchor}Figure 11 - LSB Encoding Visualisation
-(Balagyozyan and Hakobyan, 2021)
+<p align="center">
+<img width="315" alt="image" src="https://github.com/user-attachments/assets/a41a1b19-f84c-41b5-b436-57bc06b2cf56" />
+</p>
+Figure 11 - LSB Encoding Visualisation (Balagyozyan and Hakobyan, 2021)
 
 ##### Hiding
 
@@ -1795,8 +1430,10 @@ coefficients. Next, the LSB technique is applied to encode the secret
 message into the least significant bits of the lowest approximation
 coefficient. Finally, the image is reconstructed to generate the stego
 image.
-
-[]{#_Toc164351776 .anchor}Figure 12 - DWT Encoding Visualisation
+<p align="center">
+<img width="368" alt="image" src="https://github.com/user-attachments/assets/58c57723-0536-43f8-98e4-e6966b1282e6" />
+</p>
+Figure 12 - DWT Encoding Visualisation
 
 ##### Hiding
 
@@ -2281,11 +1918,9 @@ from user testing sessions will be analysed to identify potential bugs
 and areas for improvement, ultimately enhancing the user experience and
 functionality of the software.
 
-#  {#section-4 .Chapter-Number}
+# IMPLEMENTATION or INVESTIGATION
 
-[]{#_Toc164351926 .anchor}IMPLEMENTATION or INVESTIGATION
-
-## Introduction {#introduction-3 .Section-Heading-1}
+## Introduction
 
 The implementation section outlines the approach and methodology adopted
 in developing the steganography software. It describes the
@@ -2441,8 +2076,10 @@ The following figure showcases the GUI of the dashboard, which serves as
 the initial window shown to users upon launching the application. This
 window has been designed with non-technical users in mind while offering
 intuitive functionality and essential information.
-
-[]{#_Toc164351777 .anchor}Figure 13 - Dashboard
+<p align="center">
+<img width="306" alt="image" src="https://github.com/user-attachments/assets/4e95fe84-e203-44bc-8875-2997e194f065" />
+</p>
+Figure 13 - Dashboard
 
 The image showcases the application name, "PixelBlend", prominently
 displayed for easy readability. A tab view has also been incorporated,
@@ -2460,8 +2097,10 @@ steganography, a message appears, informing them that these features\'
 encoding and decoding functionality is not yet available. Instead, it
 will be implemented in a future update. Figure 14 illustrates the alert
 displayed to the user.
-
-[]{#_Toc164351778 .anchor}Figure 14 - Audio & Video Steganography
+<p align="center">
+<img width="281" alt="image" src="https://github.com/user-attachments/assets/e9920f57-c8f0-4779-87c3-50d9b7673c9b" />
+</p>
+Figure 14 - Audio & Video Steganography
 
 ### Image Steganography
 
@@ -2488,8 +2127,10 @@ option utilises the LSB algorithm, while the "Advanced" option employs
 the DWT algorithm. At the bottom of the window, two buttons are
 situated: one to upload the carrier image and the other to commence the
 encoding process.
-
-[]{#_Toc164351779 .anchor}Figure 15 - Image Steganography
+<p align="center">
+<img width="254" alt="image" src="https://github.com/user-attachments/assets/1956e709-c914-477c-a2be-86bc440d94e2" />
+</p>
+Figure 15 - Image Steganography
 
 #### Image Selection
 
@@ -2502,17 +2143,22 @@ machine. Additionally, at the bottom of the image, a snippet displays a
 pre-set list of options users can upload. This ensures that users can
 only upload image formats supported by the application. The available
 options include PNG, JPG, and JPEG formats.
-
-[]{#_Toc164351780 .anchor}Figure 16 - Image Selection
+<p align="center">
+<img width="355" alt="image" src="https://github.com/user-attachments/assets/6d9aabd1-a7e0-4dec-aa1b-2d9df8acab6d" />
+</p>
+Figure 16 - Image Selection
 
 If no image is uploaded or no message is provided, an error message
 appears, informing the user to upload the carrier image and secret
 message. Without completing these steps, the encoding process cannot be
 initiated.
 
-#### Extraction Window
+<p align="center">
+<img width="409" alt="image" src="https://github.com/user-attachments/assets/7d59b653-95c0-418c-8499-c273d83eee39" />
+</p>
+Figure 17 - Error Messages
 
-[]{#_Toc164351781 .anchor}Figure 17 - Error Messages
+#### Extraction Window
 
 When extracting the concealed message, the window appears similar to the
 hiding window. However, the title can easily distinguish the windows,
@@ -2528,9 +2174,10 @@ user must know the exact level of security chosen during encoding.
 Finally, two buttons are provided at the bottom of the window: one for
 uploading the stego image and the other to initiate the decoding
 process.
-
-[]{#_Toc164351782 .anchor}Figure 18 - Image Steganography Extraction
-Window
+<p align="center">
+<img width="394" alt="image" src="https://github.com/user-attachments/assets/3774c83f-c02d-473f-809c-48fe47cc0ed0" />
+</p>
+Figure 18 - Image Steganography Extraction Window
 
 #### Messages
 
@@ -2540,15 +2187,19 @@ Additionally, if the decoding algorithms fail to detect any message, the
 error message displayed in the following figure informs the user to
 verify the decoding level, as it might be incorrect or if the uploaded
 image was indeed the stego image.
-
-[]{#_Toc164351783 .anchor}Figure 19 - Error Message
+<p align="center">
+<img width="274" alt="image" src="https://github.com/user-attachments/assets/2b1dcc76-beb8-4937-87e2-461d269af598" />
+</p>
+Figure 19 - Error Message
 
 If the decryption key provided by the user is incorrect, an error
 message is displayed, informing the user that the provided key is
 incorrect. Additionally, if the user fails to provide the decryption
 key, another error message prompts them to input it.
-
-[]{#_Toc164351784 .anchor}Figure 20 - Error Messages
+<p align="center">
+<img width="454" alt="image" src="https://github.com/user-attachments/assets/f9c72c62-25c7-415a-a4da-f6021cc53e6e" />
+</p>
+Figure 20 - Error Messages
 
 ### Text Steganography
 
@@ -2568,8 +2219,10 @@ algorithm, while the "Advanced" option is not implemented but is planned
 for future deployment. At the bottom of the window, two buttons are
 included: one for uploading the text file and the other to initiate the
 encoding process.
-
-[]{#_Toc164351785 .anchor}Figure 21 - Text Encoding Window
+<p align="center">
+<img width="341" alt="image" src="https://github.com/user-attachments/assets/4daf0858-a205-47be-94a8-c5761e4ba329" />
+</p>
+Figure 21 - Text Encoding Window
 
 #### Messages
 
@@ -2579,8 +2232,10 @@ been uploaded and if the secret message has been inputted. Additionally,
 a message box appears if the user selects the "Advanced" algorithm for
 encoding. This message informs the user that the selected algorithm is
 unavailable and will be implemented in future software updates.
-
-[]{#_Toc164351786 .anchor}Figure 22 - Error Message
+<p align="center">
+<img width="372" alt="image" src="https://github.com/user-attachments/assets/4c550146-67d8-4f0b-ac92-74963d0a18e1" />
+</p>
+Figure 22 - Error Message
 
 #### Extraction Window
 
@@ -2595,8 +2250,10 @@ security utilised during encoding. However, the "Advanced" algorithm has
 not yet been implemented and is planned for future updates. Finally, at
 the bottom of the window, two buttons are provided: one for uploading
 the stego file and the other to initiate the decoding process.
-
-[]{#_Toc164351787 .anchor}Figure 23 - Text Extraction Window
+<p align="center">
+<img width="401" alt="image" src="https://github.com/user-attachments/assets/73ea758e-7a9b-413f-aa98-b579ffc7ca5f" />
+</p>
+Figure 23 - Text Extraction Window
 
 ## Testing
 
@@ -2679,7 +2336,7 @@ result, and whether the test passed or failed.
                              error                              
   -------------------------------------------------------------------------
 
-  : []{#_Toc164351755 .anchor}Table 2 - Unit Testing
+  Table 2 - Unit Testing
 
 ### Integration Testing
 
@@ -2732,7 +2389,7 @@ result, actual result, and test outcome.
                            input                                 
   --------------------------------------------------------------------------
 
-  : []{#_Toc164351756 .anchor}Table 3 - Integration Testing
+  Table 3 - Integration Testing
 
 ### Functional Testing
 
@@ -2778,7 +2435,7 @@ each test, the expected result, the actual result, and the test outcome.
                                   extracted      expected result 
   --------------------------------------------------------------------------
 
-  : []{#_Toc164351757 .anchor}Table 4 - Functional Testing
+  Table 4 - Functional Testing
 
 ### User Testing
 
@@ -2818,13 +2475,11 @@ feedback received from the user.
                   bugs              
   -------------------------------------------------------------------------
 
-  : []{#_Toc164351758 .anchor}Table 5 - User Testing
+  Table 5 - User Testing
 
-#  {#section-5 .Chapter-Number}
+# RESULTS / DISCUSSION
 
-[]{#_Toc164351943 .anchor}RESULTS / DISCUSSION
-
-## Introduction {#introduction-4 .Section-Heading-1}
+## Introduction
 
 The literature presents the findings of the steganography software,
 demonstrating its effectiveness in concealing information within digital
@@ -2983,8 +2638,10 @@ close to 1, indicating that the images are nearly indistinguishable.
 The following figure illustrates the modifications between the original
 carrier image and the stego image when utilising LSB, indicating the
 areas where data is concealed within the image.
-
-[]{#_Toc164351788 .anchor}Figure 24 - SSIM for LSB
+<p align="center">
+<img width="330" alt="image" src="https://github.com/user-attachments/assets/1c5550c0-dfca-4e9a-a65a-8732b79eee53" />
+</p>
+Figure 24 - SSIM for LSB
 
 As depicted in Figure 24, the LSB algorithm modifies the image pixels to
 sequentially store the encoded message at the top of the image,
@@ -2996,8 +2653,10 @@ pixel and iterates sequentially until the entire message is encoded.
 The figure below clearly displays the distinctions between the original
 carrier image and the stego image using DWT, indicating where data is
 stored within the image.
-
-[]{#_Toc164351789 .anchor}Figure 25 - SSIM for DWT
+<p align="center">
+<img width="337" alt="image" src="https://github.com/user-attachments/assets/bbf86a1b-4183-4b6f-8a0e-4bde7f5c3377" />
+</p>
+Figure 25 - SSIM for DWT
 
 Figure 25 demonstrates that the DWT algorithm does not encode the secret
 message in a linear sequence from the first pixel of the image. Instead,
@@ -3014,9 +2673,10 @@ implemented algorithms, a few of these websites were utilised to attempt
 extraction of the encoded data. The first website consulted was
 "Aperi'Solve", which divides the image into various colour coefficients
 to extract the encoded data.
-
-[]{#_Toc164351790 .anchor}Figure 26 - Aperi\'Solve for Image Encoded
-with LSB
+<p align="center">
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/4e570902-9e0c-4afb-b923-ee12c1ab9b02" />
+</p>
+Figure 26 - Aperi\'Solve for Image Encoded with LSB
 
 Figure 26 demonstrates that the website successfully decoded the
 embedded data, visible under the \"Zsteg\" section, revealing the secret
@@ -3032,16 +2692,18 @@ As depicted in Figure 27, the website failed to retrieve the secret data
 stored within the stego image generated using the advanced algorithm.
 This indicates that the DWT algorithm offers higher security against
 online decoders.
-
-[]{#_Toc164351791 .anchor}Figure 27 - Aperi\'Solve for Image Encoded
-with DWT
+<p align="center">
+<img width="333" alt="image" src="https://github.com/user-attachments/assets/da096ba5-077e-4ebf-8eb5-e6cc07d8d168" />
+</p>
+Figure 27 - Aperi\'Solve for Image Encoded with DWT
 
 The second website consulted is "stylesuxx", which, while more
 superficial than the first website examined, still enables the encoding
 and decoding data within images.
-
-[]{#_Toc164351792 .anchor}Figure 28 - Stylesuxx Decoding LSB and DWT
-Stego Images
+<p align="center">
+<img width="348" alt="image" src="https://github.com/user-attachments/assets/e1cdabc8-8094-428a-9636-31f9ffcb4793" />
+</p>
+Figure 28 - Stylesuxx Decoding LSB and DWT Stego Images
 
 In Figure 28, the website attempts to decode a stego image with embedded
 data using basic and advanced algorithms. The website successfully
@@ -3079,9 +2741,10 @@ implies that the encoded data resides within the file\'s body, enhancing
 the security of the hidden information. While this does not ensure
 complete security, it does increase the difficulty for unauthorised
 users to extract or detect the secret message.
-
-[]{#_Toc164351793 .anchor}Figure 29 - Stego Image Encoded Using the LSB
-Algorithm
+<p align="center">
+<img width="187" alt="image" src="https://github.com/user-attachments/assets/1d64ed2e-4fe4-4122-95da-eb8a5b17ee1b" />
+</p>
+Figure 29 - Stego Image Encoded Using the LSB Algorithm
 
 #### DWT Encoded Image
 
@@ -3095,9 +2758,10 @@ file's body, thereby enhancing the security of the hidden information.
 While this does not guarantee complete security, it does make it more
 challenging for an unauthorised user to extract or detect the secret
 message.
-
-[]{#_Toc164351794 .anchor}Figure 30 - Stego Image Encoded Using the DWT
-Algorithm
+<p align="center">
+<img width="369" alt="image" src="https://github.com/user-attachments/assets/3d570036-1ddc-4ac2-9e52-9b6617457450" />
+</p>
+Figure 30 - Stego Image Encoded Using the DWT Algorithm
 
 #### LSB Encoded Text File
 
@@ -3111,9 +2775,10 @@ characters, such as spaces, were present. This suggests that the
 algorithm is vulnerable to techniques involving HEX editors. However,
 despite the method's ability to detect concealed information, the text
 retains its confidentiality due to the applied encryption.
-
-[]{#_Toc164351795 .anchor}Figure 31 - Comparison of HEX Values of
-Carrier and Stego File
+<p align="center">
+<img width="371" alt="image" src="https://github.com/user-attachments/assets/a1de742f-9df4-4dbb-88b6-76e69ac2048f" />
+</p>
+Figure 31 - Comparison of HEX Values of Carrier and Stego File
 
 ### Metadata and Byte-by-Byte Comparison
 
@@ -3129,8 +2794,10 @@ differ in metadata, such as file size and last modification time.
 Additionally, the second scan, which examines each byte of the files,
 also reveals differences between them. This suggests that encoding data
 into the stego file has altered its content.
-
-[]{#_Toc164351796 .anchor}Figure 32 - Metadata and Byte-by-Byte Scan
+<p align="center">
+<img width="365" alt="image" src="https://github.com/user-attachments/assets/d0943e2f-a572-4ddb-aa3f-bfc7a54e2df0" />
+</p>
+Figure 32 - Metadata and Byte-by-Byte Scan
 
 ## Comparative Analysis
 
@@ -3366,7 +3033,7 @@ to mitigate risks and ensure accountability.
                     compliance.
   -----------------------------------------------------------------------
 
-  : []{#_Toc164351759 .anchor}Table 6 - Legal Issues
+  Table 6 - Legal Issues
 
 ### Social Issues
 
@@ -3405,7 +3072,7 @@ to mitigate risks and ensure accountability.
                        practices.
   -----------------------------------------------------------------------
 
-  : []{#_Toc164351760 .anchor}Table 7 - Social Issues
+  Table 7 - Social Issues
 
 ### Ethical Issues
 
@@ -3430,7 +3097,7 @@ to mitigate risks and ensure accountability.
                    limitations, and potential risks.
   -----------------------------------------------------------------------
 
-  : []{#_Toc164351761 .anchor}Table 8 - Ethical Issues
+  Table 8 - Ethical Issues
 
 ### Professional Issues
 
@@ -3462,7 +3129,7 @@ to mitigate risks and ensure accountability.
                      assisting efforts to combat illicit use.
   -----------------------------------------------------------------------
 
-  : []{#_Toc164351762 .anchor}Table 9 - Professional Issues
+  Table 9 - Professional Issues
 
 ## Synoptic Reflections
 
@@ -3504,7 +3171,7 @@ In the future, I see myself using the knowledge acquired from this
 project to pursue a career in digital forensics. My proficiency in
 steganography will allow me to make valuable contributions to the field.
 
-# References {#references .Page-Headings}
+# References
 
 Ali, R.H., 2015. Steganography in Audio Using Wavelet and DES. Baghdad
 Science Journal, 12(2), pp.431-436.
@@ -3843,7 +3510,7 @@ Zhang, R., Sachnev, V., Botnan, M.B., Kim, H.J. and Heo, J., 2012. An
 efficient embedder for BCH coding for steganography. IEEE Transactions
 on Information Theory, 58(12), pp.7272-7279.
 
-# Bibliography {#bibliography .Page-Headings}
+# Bibliography
 
 Ali, R.H., 2015. Steganography in Audio Using Wavelet and DES. Baghdad
 Science Journal, 12(2), pp.431-436.
